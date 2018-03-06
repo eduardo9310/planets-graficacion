@@ -1,0 +1,142 @@
+/* Pantalla 
+	Window size: 1366 x 768
+	*Viewport size: 1366 x 678 
+*/
+
+/* Formato a body por default */
+body{
+	height: 100%;
+	width: 100%;
+	margin:0px;
+	padding: 0px;
+	font-family: sans-serif;
+	background: #000;
+	color: white;
+}
+
+
+/* Diseño de los elementos DIV */
+.contenedor-lista{
+	float: left;
+	width: 20%;
+	height: 470px;
+	background: rgba(7, 0, 54, 0.9);
+	font-size: 20px;
+}
+
+.contenedor{
+	background: url(img/fondo5.jpg);
+	float: left;
+	width: 80%;
+	height: 470px;
+}
+
+.contenedor-opciones{
+	background: rgba(0, 0, 0, 0.4);
+	float: left;
+	width: 100%;
+	height: 178px;
+}
+
+
+
+/* help del DIV contendo */
+
+.banner-titulo{
+	float: right;
+}
+
+/* Boton Help */
+.help{
+	float: right;
+	margin-top: 0px;
+}
+
+/* Diseño de los elementos del DIV contenido-planetas */
+
+.lista-planetas{
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	color: white;
+}
+
+
+/* Efectos para las opciones y lista de planetas */
+
+.lista-planetas:hover, .opciones:hover{
+	color: #fff;
+	transition-duration: .35s;
+	cursor: pointer;
+}
+
+
+/* Titulo de todos los elementos DIV */
+
+.titulo{
+	text-align: center;
+	margin: 0px;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+
+
+/* Div titulo principal */
+.banner-titulo{
+	width: 100%;
+}
+
+
+/* Estilo de las Opciones */
+.opciones{
+	float: left;
+	display: inline;
+	margin-left: 100px;
+	text-align: center;
+}
+
+
+
+/* Diseño Tierra */
+
+.nubes,
+.mapa{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto; 
+}
+
+.nubes{
+	width: 220px;
+	height: 220px;
+}
+
+.nubes img {
+	position: relative;
+	z-index: 20;
+}
+
+.mapa{
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+
+	background: url(planetas/planetas/jupiter.jpg);
+	
+	background-size: cover;
+
+	-webkit-animation: tierra-girando 5s infinite linear;
+}
+
+@-webkit-keyframes tierra-girando {
+	from{
+		background-position: left center;
+	}
+	to{
+		background-position: -792px center;
+	}
+}	
+
+/* Fin de diseño */

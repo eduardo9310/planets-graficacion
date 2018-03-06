@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimim-scale=1">
+    <title>Graficación por Computadora 9A</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="planetas/sol.css">
+    <link rel="stylesheet" href="planetas/mercurio.css">
+    <link rel="stylesheet" href="planetas/venus.css">
+    <link rel="stylesheet" href="planetas/tierra.css">
+    <link rel="stylesheet" href="planetas/marte.css">
+    <link rel="stylesheet" href="planetas/jupiter.css">
+    <link rel="stylesheet" href="planetas/saturno.css">
+    <link rel="stylesheet" href="planetas/urano.css">
+    <link rel="stylesheet" href="planetas/neptuno.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <style>
+
+        body{
+            background:  #293133;
+            margin: 5px;
+        }
+    
+        .bg-planetas{
+            background-image: url("img/fondo5.jpg");
+            }
+        .opciones-row{
+            height: 0px;
+            }
+
+        .sin-girar{
+            -webkit-animation: planeta-girando 0s infinite linear;
+           
+        }
+
+    
+        .rapido{
+            -webkit-animation: planeta-girando 10s infinite linear;
+            }
+
+        .medio{
+            -webkit-animation: planeta-girando 30s infinite linear;
+            }
+
+        .lento{
+            -webkit-animation: planeta-girando 70s infinite linear;
+            }
+            
+        .planeta-girando{
+            -webkit-animation: planeta-girando 50s infinite linear;
+            }
+
+
+        .izquierdo {margin-left: 10px; transition-duration: 3s;}
+
+        .centro {margin: auto; transition-duration: 3s;}
+
+        .derecho {margin-right: 10px; transition-duration: 3s;}
+
+        .circulo {border-radius: 50%; transition-duration: 3s;}
+
+        .cuadrado {border-radius: 1%; transition-duration: 3s;}
+
+        .grande {width: 400px; height: 400px; transition-duration: 3s;}
+
+        .mediano {width: 200px; height: 200px; transition-duration: 3s;}
+
+        .pequeño {width: 100px; height: 100px; transition-duration: 3s;}
+
+    </style>
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <!-- titulo planetas -->
+            <div class="col">
+                <h1 class="bg-secondary text-title text-center text-uppercase text-info">The Planets</h1>
+            </div>
+        </div>
+
+        <!-- lista de planetas -->
+        <div class="row">
+           
+            <!-- lista de planetas -->
+            <div class="col-2">
+                <h3 class="text-center text-warning text-uppercase">Planetas</h3>
+                <span class="btn-sol btn btn-block btn-secondary">Sol</span>
+                <span class="btn-mercurio btn btn-block btn-secondary">Mercurio</span>
+                <span class="btn-venus btn btn-block btn-secondary">Venus</span>
+                <span class="btn-tierra btn btn-block btn-secondary">Tierra</span>
+                <span class="btn-marte btn btn-block btn-secondary">Marte</span>
+                <span class="btn-jupiter btn btn-block btn-secondary">Júpiter</span>
+                <span class="btn-saturno btn btn-block btn-secondary">Saturno</span>
+                <span class="btn-urano btn btn-block btn-secondary">Urano</span>
+                <span class="btn-neptuno btn btn-block btn-secondary">Neptuno</span><br>
+            </div>
+
+            <!-- Planetas -->
+            <div class="bg-planetas col-10">    
+
+                <div class="planetas-img opcion sol"></div>
+
+                <div class="planetas-img opcion mercurio"></div>
+
+                <div class="opcion venus"></div>
+
+                <div class="opcion tierra"></div>
+
+                <div class="opcion marte"></div>
+
+                <div class="opcion jupiter"></div>
+
+                <div class="opcion saturno"></div>
+
+                <div class="opcion urano"></div>
+
+                <div class="opcion neptuno"></div>                
+            </div>
+
+        </div>
+        
+        <!-- Opciones -->
+        <div class="w-100"></div>
+
+            </br><div class="opciones-row row">
+            <div class="col-3"> 
+                <h3 class="text-center text-warning">Rotación</h3>
+                <span class="rapido btn btn-secondary">Rapido</span>
+                <span class="medio btn btn-secondary">Medio</span>
+                <span class="lento btn btn-secondary">Lento</span>
+            </div>
+            <div class="col-3"> 
+                <h3 class="text-center text-warning">Traslación</h3>
+                <span class="izquierdo btn btn-secondary">Izquierda</span>
+                <span class="centro btn btn-secondary">Centro</span>
+                <span class="derecho btn btn-secondary">Derecha</span>
+            </div>
+
+            <div class="col-3"> 
+                <h3 class="text-center text-warning">Transformación</h3>
+                <span class="Cuadrado btn   btn-secondary">Cuadrado</span>
+                <span class="Circulo btn btn-secondary">Circulo</span>
+            </div>
+
+            <div class="col-3"> 
+                <h3 class="text-center text-warning">Escalación</h3>
+                <span class="Grande btn btn-secondary">Grande</span>
+                <span class="Mediano btn btn-secondary">Medio</span>
+                <span class="Pequeño btn btn-secondary">Pequeño</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        $(document).ready(function() {
+            $('.opcion').hide();
+            
+            $('.btn-sol').click(function() {
+                $('.opcion').hide();
+                $('.sol').show();
+            })
+
+            $('.btn-mercurio').click(function() {
+                $('.opcion').hide();
+                $('.mercurio').show();
+            })
+
+            $('.btn-venus').click(function() {
+                $('.opcion').hide();
+                $('.venus').show();
+            })
+
+            $('.btn-tierra').click(function() {
+                $('.opcion').hide();
+                $('.tierra').show();
+            })
+
+            $('.btn-marte').click(function() {
+                $('.opcion').hide();
+                $('.marte').show();
+            })
+
+            $('.btn-jupiter').click(function() {
+                $('.opcion').hide();
+                $('.jupiter').show();
+            })
+
+            $('.btn-saturno').click(function() {
+                $('.opcion').hide();
+                $('.saturno').show();
+            })
+
+            $('.btn-urano').click(function() {
+                $('.opcion').hide();
+                $('.urano').show();
+            })
+
+            $('.btn-neptuno').click(function() {
+                $('.opcion').hide();
+                $('.neptuno').show();
+            })
+
+            $('.rapido').click(function() {
+                $('.opcion').removeClass('rapido medio lento cuadrado');
+                $('.opcion').addClass('rapido circulo');
+            })
+
+            $('.medio').click(function() {
+                $('.opcion').removeClass('rapido medio lento cuadrado');
+                $('.opcion').addClass('medio circulo');
+            })
+
+            $('.lento').click(function() {
+                $('.opcion').removeClass('rapido medio lento cuadrado');
+                $('.opcion').addClass('lento circulo');
+            })
+
+
+            $('.izquierdo').click( function(){
+                $('.opcion').removeClass('centro derecho');
+                $('.opcion').addClass('izquierdo');
+            })
+
+            $('.centro').click( function(){
+                $('.opcion').removeClass('izquierdo derecho');
+                $('.opcion').addClass('centro');
+            })
+
+            $('.derecho').click( function(){
+                $('.opcion').removeClass('izquierdo centro');
+                $('.opcion').addClass('derecho');
+            })
+
+
+
+            $('.Circulo').click( function(){
+                $('.opcion').removeClass('cuadrado');
+                $('.opcion').addClass('circulo ');
+            })
+
+
+            $('.Cuadrado').click( function(){
+                $('.opcion').removeClass('circulo rapido medio lento');
+                $('.opcion').addClass('cuadrado sin-girar');
+            })
+
+            $('.Grande').click( function(){
+                $('.opcion').removeClass('mediano pequeño');
+                $('.opcion').addClass('grande');
+            })
+
+            $('.Mediano').click( function(){
+                $('.opcion').removeClass('grande pequeño');
+                $('.opcion').addClass('mediano');
+            })
+
+            $('.Pequeño').click( function(){
+                $('.opcion').removeClass('grande mediano');
+                $('.opcion').addClass('pequeño');
+            })
+
+    })
+    </script>
+
+</body>
+</html>
